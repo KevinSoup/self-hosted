@@ -59,21 +59,21 @@ services:
     restart: always
 
   # Caddy: Web server
-  caddy:
-    image: docker.io/caddy
-    restart: always
-    env_file: .env.web
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - ./data/caddy-data:/data
-      - ./data/caddy-config:/config
-    networks:
-      default:
-        aliases:
-         - "${STOAT_DOMAIN:-caddy}"
+  #caddy:
+  #  image: docker.io/caddy
+  #  restart: always
+  #  env_file: .env.web
+  #  ports:
+  #    - "80:80"
+  #    - "443:443"
+  #  volumes:
+  #    - ./Caddyfile:/etc/caddy/Caddyfile
+  #    - ./data/caddy-data:/data
+  #    - ./data/caddy-config:/config
+  #  networks:
+  #    default:
+  #      aliases:
+  #       - "${STOAT_DOMAIN:-caddy}"
 
   # API server
   api:
